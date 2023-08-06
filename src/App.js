@@ -6,7 +6,9 @@ import { Routes, Route } from "react-router-dom"
 import Home from './router/home/Home';
 import { ToastContainer } from 'react-toastify';
 import CreateCustomer from './router/create-customer/CreateCustomer';
+import CreateAdmin from './router/create-admin/CreateAdmin';
 import 'react-toastify/dist/ReactToastify.css';
+import Admins from './router/admins/Admins';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/create-customer' element={<CreateCustomer />} />
+          <Route path='/create-admin' element={<CreateAdmin />} />
+          <Route path='/admins' element={<Admins />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

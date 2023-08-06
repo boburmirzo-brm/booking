@@ -25,8 +25,6 @@ export const customerSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addCustomer, removeCustomer, updateCustomer } =
-  customerSlice.actions;
+export const { addCustomer, removeCustomer, updateCustomer } = customerSlice.actions;
 
 export default customerSlice.reducer;

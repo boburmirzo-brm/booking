@@ -49,6 +49,9 @@ function EditCustomer({ setEditShow, editShow,setRealod }) {
         <></>
       )}
       <div className={`right__model ${editShow ? "right__show" : ""}`}>
+        <button type="button" onClick={() => setEditShow(null)} className="btn__exit">
+          <BsChevronLeft />
+        </button>
         <button type="button" onClick={() => setEditShow(null)} className="btn__cancel">
           <BsChevronLeft />
         </button>

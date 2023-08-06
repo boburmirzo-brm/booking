@@ -21,7 +21,6 @@ function Home() {
   const [data, setDate] = useState([]);
   const [filter, setFilter] = useState("all");
   const dispatch = useDispatch();
-  console.log(target);
   useEffect(()=>{
     if(filter === "all"){
       setDate(customers)
@@ -36,6 +35,13 @@ function Home() {
       setRealod(p=>!p)
     }
   };
+
+  const handleComment = (item)=>{
+    dispatch(updateCustomer({ ...item, comment, statusDate: new Date().getTime() }))
+    setRealod(p=>!p)
+    setTarget(null)
+    setComment("")
+  }
   return (
     <div>
       <div className="home__navbar">
@@ -82,12 +88,7 @@ function Home() {
                 target === item.id ? 
                 <div className="comment__section">
                   <input value={comment} onChange={e=> setComment(e.target.value)} type="text" placeholder="izoh" />
-                  <button onClick={()=> {
-                     dispatch(updateCustomer({ ...item, comment }))
-                     setRealod(p=>!p)
-                     setTarget(null)
-                     setComment("")
-                  }} type="button">Kiritish</button>
+                  <button onClick={()=>handleComment(item)} type="button">Kiritish</button>
                   <button onClick={()=> setTarget(null)} type="button">Bekor qilish</button>
                 </div>
                 : <></>
@@ -98,7 +99,6 @@ function Home() {
               <p>{new Date(item.date).toLocaleString()}</p>
             </div>
             <div>
-              <p>Holat</p>
               {!item.status ? (
                 <b>Aloqaga chiqilmagan</b>
               ) : (
@@ -120,6 +120,7 @@ function Home() {
                 </b>
               )}
               <p>{item.comment}</p>
+              <p>{item.statusDate ? new Date(item.statusDate).toLocaleString() : ""}</p>
             </div>
             <div>
               <div onClick={() => handleDelete(item.id)} className="home__btn">
