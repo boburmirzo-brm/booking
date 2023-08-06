@@ -16,7 +16,6 @@ function Login() {
   const handleChange = (e) => {
     let key = e.target.getAttribute("name");
     let value = e.target.value.toLowerCase().trim();
-
     const cloneData = structuredClone(data);
     cloneData[key] = value;
     setData(cloneData);
@@ -24,7 +23,17 @@ function Login() {
 
   const handleSignIn = (e) => {
     e.preventDefault();
- 
+    if("boburmirzo" === data.username && "12345677" === data.password){
+      let user = JSON.stringify({
+        username: "boburmirzo",
+        password: "12345677",
+        role: "owner",
+      })
+      localStorage.setItem("user", user)
+      navigate("/")
+    }else{
+      toast.error("username yoki parol noto'g'ri")
+    }
   };
 
   return (

@@ -51,7 +51,7 @@ function Admins() {
               <div onClick={() => handleDelete(item.id)} className="home__btn">
                 <FiTrash2 />
               </div>
-              <div onClick={() => setEditShow(item)} className="home__btn">
+              <div onClick={() => setEditShow({...item, admin: true})} className="home__btn">
                 <FiEdit3 />
               </div>
             </div>

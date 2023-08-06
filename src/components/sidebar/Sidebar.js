@@ -9,7 +9,12 @@ function Sidebar() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const adminOrOwner = JSON.parse(localStorage.getItem("user"));
-
+  const handleLogout = () => {
+    if(window.confirm("Ishonchingiz komilmi?")){
+      localStorage.removeItem("user")
+      navigate("/login")
+    }
+  }
   return (
     <div>
       <div
@@ -30,6 +35,7 @@ function Sidebar() {
                   </NavLink>
                 </li>
               )}
+              <li onClick={handleLogout} className="sidebar__item sidebar__link sidebar__exit">Tizimdan chiqish</li>
           </ul>
         </div>
         <div className="sidebar__brand">

@@ -1,14 +1,15 @@
-import './App.css';
-import Login from './router/login/Login';
-import NotFound from './router/not-found/NotFound';
-import Layout from './router/layout/Layout';
-import { Routes, Route } from "react-router-dom"
-import Home from './router/home/Home';
-import { ToastContainer } from 'react-toastify';
-import CreateCustomer from './router/create-customer/CreateCustomer';
-import CreateAdmin from './router/create-admin/CreateAdmin';
-import 'react-toastify/dist/ReactToastify.css';
-import Admins from './router/admins/Admins';
+import "./App.css";
+import Login from "./router/login/Login";
+import NotFound from "./router/not-found/NotFound";
+import Layout from "./router/layout/Layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./router/home/Home";
+import { ToastContainer } from "react-toastify";
+import CreateCustomer from "./router/create-customer/CreateCustomer";
+import CreateAdmin from "./router/create-admin/CreateAdmin";
+import "react-toastify/dist/ReactToastify.css";
+import Admins from "./router/admins/Admins";
+import Auth from "./router/auth/Auth";
 
 function App() {
   return (
@@ -16,11 +17,13 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='/create-customer' element={<CreateCustomer />} />
-          <Route path='/create-admin' element={<CreateAdmin />} />
-          <Route path='/admins' element={<Admins />} />
+        <Route path="/" element={<Auth />}>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/create-customer" element={<CreateCustomer />} />
+            <Route path="/create-admin" element={<CreateAdmin />} />
+            <Route path="/admins" element={<Admins />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
