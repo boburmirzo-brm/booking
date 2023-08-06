@@ -1,0 +1,86 @@
+.home__navbar{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.home__navbar select{
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.home__card{
+    display: grid;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    grid-template-columns: repeat(6, 180px);
+    grid-gap: 20px;
+}
+.home__card select{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.home__card input{
+    width: 100%;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+    text-indent: 10px;
+}
+.home__card p{
+    font-size: 14px;
+    color: #555;
+}
+.home__btn{
+    display: inline-block;
+    border: 1px solid crimson;
+    color: crimson;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.home__btn:nth-child(2){
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    margin-left: 16px;
+}
+.home__not-found{
+    text-align: center;
+    margin-top: 50px;
+    color: crimson;
+}
+.comment__section button{
+    border: 1px solid #ddd;
+    margin-right: 12px;
+    padding:4px 6px ;
+    cursor: pointer;
+    border-radius: 4px;
+}
+@media screen and (max-width: 1500px) {
+    .home__card{
+        grid-template-columns: repeat(4, 180px);
+    }
+}
+@media screen and (max-width: 1150px) {
+    .home__card{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 700px) {
+    .home__card{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 410px) {
+    .home__card{
+        grid-gap: 10px;
+    }
+}
+@media screen and (max-width: 390px) {
+    .home__card{
+        grid-template-columns:1fr;
+    }
+}

@@ -1,0 +1,136 @@
+.login-main {
+    background: #f1f1f1;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .login-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 25px #0001;
+  }
+  .login-h1 {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--BLUE-DARK2);
+    border-bottom: 1px solid silver;
+  }
+  .login-form {
+    padding: 0 40px;
+  }
+  .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  .login-input {
+    width: 100%;
+    height: 40px;
+    font-size: var(--FONT-P);
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .login-label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: var(--GRAY-LIGHT);
+    transform: translateY(-50%);
+    font-size: var(--FONT-P);
+    pointer-events: none;
+    transition: var(--T-SET);
+  }
+  .txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--BLUE2);
+    transition: var(--T-SET);
+  }
+  .txt_field .login-input:focus ~ .login-label,
+  .txt_field .login-input:valid ~ .login-label {
+    top: -5px;
+    color: var(--BLUE2);
+  }
+  .txt_field .login-input:focus ~ span::before,
+  .txt_field .login-input:valid ~ span::before {
+    width: 100%;
+  }
+  .login-pass {
+    margin: -5px 0 20px 5px;
+    color: var(--GRAY-LIGHT);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .login-pass:hover {
+    color: var(--BLUE-DARK2);
+  }
+  .login-btn {
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 50px;
+    background: var(--BLUE2);
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    border: none;
+    transition: var(--T-SET);
+  }
+  .login-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .login-btn span {
+    display: inline-block;
+    position: relative;
+    transition: var(--T-SET);
+  }
+  .login-btn span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: var(--T-SET);
+  }
+  .login-btn:hover span {
+    padding-right: 25px;
+  }
+  .login-btn:disabled:hover span {
+    padding-right: 0px;
+  }
+  .login-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .login-btn:disabled:hover span:after {
+    opacity: 0;
+    right: 0;
+  }
+  .loader {
+    transform: scale(0.1);
+  }
+  
+  @media screen and (max-width: 400px) {
+    .login-center {
+      width: 96%;
+    }
+    .login-form {
+      padding: 0 20px;
+    }
+  }
+  

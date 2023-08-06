@@ -1,0 +1,124 @@
+.right__model-shadow {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0007;
+  z-index: 9;
+}
+.right__model {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background: #fff;
+  z-index: 10;
+  padding: 15px;
+  transition: var(--T-SET);
+  border-left: var(--BORDER-LIGHT);
+}
+.edit__customer-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+.right__model.right__show {
+  right: 0;
+}
+
+.right__model h2 {
+  color: var(--BLUE-DARK2);
+  margin-bottom: 16px;
+}
+
+.cc-main {
+  padding: 15px;
+  padding-bottom: 400px;
+  color: var(--BODY-COLOR);
+  background: var(----BODY-BGCOLOR);
+}
+.cc-h1 {
+  margin-bottom: 2rem;
+  text-shadow: var(--SHADOW-01);
+  color: #fff;
+  background: var(--HEADER-BGCOLOR);
+  font-size: 22px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+.cc-form {
+  max-width: 600px;
+  color: var(--BLUE-DARK);
+}
+.cc-btn {
+  height: 40px;
+  background-color: var(--BLUE);
+  box-shadow: var(--SHADOW-01);
+  margin-bottom: 5px;
+}
+.cc-input {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  outline: none;
+  border: var(--BORDER-LIGHT);
+  border-radius: 6px;
+  height: 40px;
+  font-size: var(--FONT-P);
+  padding: 7px 5px;
+}
+.cc-input:focus {
+  box-shadow: 0 0 3px 1px var(--BLUE-TS);
+  border: 1px solid var(--BLUE);
+}
+
+.showingEnteredNumbers {
+  color: var(--BLUE-DARK3);
+  margin-bottom: 4px;
+}
+.showingEnteredNumbers span {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  gap: 6px;
+}
+.regStu__deleteNumber {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 1px 3px;
+  font-weight: 600;
+}
+.regStu__deleteNumber svg {
+  transition: 0.25s;
+}
+.regStu__deleteNumber:hover svg {
+  color: var(--DANGER);
+  transform: scale(1.1);
+}
+.btn__cancel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  z-index: 11;
+  height: 40px;
+  border: none;
+  background: linear-gradient(90deg, #0000, #0005);
+  backdrop-filter: blur(3px);
+  padding-left: 15%;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .right__model {
+    right: -100%;
+    width: 100%;
+  }
+}
